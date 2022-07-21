@@ -15,36 +15,38 @@ public class Solution {
             - if the 2 int arrays are not equal at any point, return false. else true.
         */
         
-        a = a.toLowerCase();
+
+        
+        a = a.toLowerCase();            // makes the Strings lower case   
         b = b.toLowerCase();
         
-        if ( a.length() == b.length()) {
+        if ( a.length() == b.length()) {                //checks if both string shave equal length
             
-            int [] aInt = new int[256];    
+            int [] aInt = new int[256];                 //creates a new array int with the total amount of char ascii
             int [] bInt = new int[256];    
             
-            for (int i=0; i<a.length(); i++) {
-                int aTemp = (int) a.charAt(i);
+            for (int i=0; i<a.length(); i++) {          // itterates thru each character 
+                int aTemp = (int) a.charAt(i);          // find the ascii code of each character at current itteration 
                 int bTemp = (int) b.charAt(i);
                 
-                aInt[aTemp] += 1;
+                aInt[aTemp] += 1;                       //pinpoints index (ascii of char) of int Array and adds 1 to that index. 
                 bInt[bTemp] += 1;
 
                // a[(int) s1.charAt(i)] += 1;
                // b[(int) s2.charAt(i)] += 1;
             }
             
-            for (int i=0; i<256; i++) {
-                if(aInt[i] != bInt[i]) {
-                    return false;
+            for (int i=0; i<256; i++) {                 // itterates thru all the index of int Array
+                if(aInt[i] != bInt[i]) {                // checks if 1 int Array is not equal to 2nd int Array if so, flse. 
+                    return false;                          // else, false.
                 }
                 
             }
             
-            return true;
+            return true;                                // if both int Array are equal at all index, then true
         }
         
-        else {
+        else {                                          // if the lengths are not equal, return false
             return false;
         }
         
@@ -57,7 +59,7 @@ public class Solution {
         String a = scan.next();
         String b = scan.next();
         scan.close();
-        boolean ret = isAnagram(a, b);
-        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
+        boolean ret = isAnagram(a, b);                  //When isAnagram is run, it outputs true or false.
+        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );  // if ret boolen is true -> "anagram", if false -> not anagram 
     }
 }
