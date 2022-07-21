@@ -7,20 +7,20 @@ public class SortAlphabeticalOrder {
         String str = "rock";
 
         // Method 1     not using sort Method
-        char arr[] = str.toCharArray();
+        char arr[] = str.toCharArray();         // putting each character in array
 
-        char temp;
+        char temp;                          //temporary character variable
 
-        for (int i = 0; i<arr.length;i++) {
+        for (int i = 0; i<arr.length;i++) {             // nested for loop
             for (int j = i + 1; j<arr.length; j++) {
-                if (arr[i] > arr[j]) {           //i-0[r], j-1[o]. r > o
-                    temp = arr[i];              //temp = r
-                    arr[i] = arr[j];            // r => o
-                    arr[j] = temp;              // o => r
+                if (arr[i] > arr[j]) {                  //if i value is greater than j value
+                    temp = arr[i];                      // basically switching values in array
+                    arr[i] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
-        System.out.println(new String(arr));
+        System.out.println(new String(arr));        //creating a new string from array
 
 
         //Method 2      using Sort Method
